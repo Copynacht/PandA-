@@ -19,8 +19,6 @@ import configparser
 ini = configparser.ConfigParser()
 ini.read('data/user.ini', 'UTF-8')
 
-user=decode("pand",ini['user']['user'].encode('utf-8').strip())
-password=decode("pand",ini['user']['password'].encode('utf-8').strip())
 try:
     elem_search_word = driver.find_element_by_id("username")
     elem_search_word.send_keys(user)
