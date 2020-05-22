@@ -32,28 +32,7 @@ try:
 
     sites=driver.find_element_by_link_text("サイトセットアップ")
     sites.click()
-    
-    print("login OK")
-    print("ユーザー認証成功")
 
-    euser=encode("pand",user)
-    epass=encode("pand",password)
-
-
-    conf = configparser.ConfigParser()
-    if os.path.exists(INI):
-        conf.read(INI)
-    if not "user" in conf.sections():
-        conf.add_section("user")
-    conf.set("user","user" , euser)
-    conf.set("user","password", epass)
-    # ファイルに書き込む
-    try:
-        f = open(INI, "w")
-        conf.write(f)
-        f.close()
-        print("ユーザー登録成功")
-    except:
         print("Cant open fielError")
 except:
     print("login_NG")
